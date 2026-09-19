@@ -97,27 +97,28 @@
             </div>
             
             <div class="bg-white p-4 rounded-xl shadow-md">
-                <div class="slider-container">
-                    <!-- Before Image Container -->
-                    <div id="beforeImg" class="slider-img block">
-                        <div class="w-full h-full bg-zinc-700 flex items-center justify-center text-white">
-                            <div class="text-center px-4">
-                                <i class="fas fa-car-burst text-6xl text-red-500 mb-3"></i>
-                                <p class="font-bold text-lg">Severe Rear-End Structural Damage & Creased Panels</p>
-                            </div>
+                <div class="slider-container relative overflow-hidden rounded-lg bg-gray-900" style="height: 450px;">
+                    
+                    <!-- Before Image Container (Upgraded with Real Image) -->
+                    <div id="beforeImg" class="slider-img block w-full h-full relative">
+                        <img src="https://unsplash.com" class="w-full h-full object-cover" alt="Severe Rear-End Structural Damage">
+                        <!-- Translucent Dark Overlay to make white text text pop cleanly -->
+                        <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+                            <p class="text-white font-bold text-lg drop-shadow-md"><i class="fas fa-car-burst text-red-500 mr-2"></i> Severe Rear-End Structural Damage &amp; Creased Panels</p>
                         </div>
-                        <span class="before-label">BEFORE REPAIR</span>
+                        <span class="before-label absolute bottom-6 right-6 bg-slate-900/90 text-white font-black text-xs tracking-wider px-3 py-1 rounded">BEFORE REPAIR</span>
                     </div>
-                    <!-- After Image Container -->
-                    <div id="afterImg" class="slider-img hidden">
-                        <div class="w-full h-full bg-slate-800 flex items-center justify-center text-white">
-                            <div class="text-center px-4">
-                                <i class="fas fa-wand-magic-sparkles text-6xl text-green-500 mb-3"></i>
-                                <p class="font-bold text-lg">Fully Aligned Structural Chassis & Flawless Factory Paint Match</p>
-                            </div>
+                    
+                    <!-- After Image Container (Upgraded with Real Image) -->
+                    <div id="afterImg" class="slider-img hidden w-full h-full relative">
+                        <img src="https://unsplash.com" class="w-full h-full object-cover" alt="Showroom Finish Restored">
+                        <!-- Translucent Dark Overlay to make white text text pop cleanly -->
+                        <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+                            <p class="text-white font-bold text-lg drop-shadow-md"><i class="fas fa-wand-magic-sparkles text-green-400 mr-2"></i> Fully Aligned Structural Chassis &amp; Flawless Factory Paint Match</p>
                         </div>
-                        <span class="after-label">AFTER REPAIR</span>
+                        <span class="after-label absolute bottom-6 right-6 bg-emerald-600 text-white font-black text-xs tracking-wider px-3 py-1 rounded">AFTER REPAIR</span>
                     </div>
+                    
                 </div>
                 
                 <!-- Toggle Slider Controls -->
@@ -126,7 +127,6 @@
                     <button onclick="showAfter()" id="btnAfter" class="px-6 py-2 bg-gray-200 text-gray-700 font-bold rounded-lg shadow transition hover:bg-gray-300">View After</button>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Streamlined Insurance Section -->
