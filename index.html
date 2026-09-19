@@ -4,128 +4,291 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tokai Auto Repairs | SAMBRA Approved Panel Beaters Cape Town</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://jsdelivr.net"></script>
-    <!-- FontAwesome Icons CDN -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Tailwind CSS for modern, responsive layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for visual anchor icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .image-toggle-active { opacity: 1; z-index: 10; }
-        .image-toggle-hidden { opacity: 0; z-index: 0; }
+        html { scroll-behavior: smooth; }
+        .slider-container { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 0.5rem; }
+        .slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        .before-label, .after-label {
+            position: absolute; bottom: 10px; padding: 4px 12px; 
+            background: rgba(0,0,0,0.7); color: white; font-weight: bold; border-radius: 4px;
+        }
+        .before-label { left: 10px; }
+        .after-label { right: 10px; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- Top Contact Strip -->
-    <div class="bg-slate-900 text-white text-sm py-2 px-4">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div>
-                <i class="fa-solid fa-location-dot text-amber-500 mr-2"></i>Concert Park, Joe Marks Blvd, Retreat
-            </div>
-            <div class="flex gap-4">
-                <a href="tel:+27217131050" class="hover:text-amber-400 transition"><i class="fa-solid fa-phone text-amber-500 mr-2"></i>021 713 1050</a>
-                <a href="mailto:tokaiautorepairs@eject.co.za" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope text-amber-500 mr-2"></i>tokaiautorepairs@eject.co.za</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="bg-slate-900 text-white p-2 rounded-lg font-bold text-xl tracking-wider">TAR</div>
+    <!-- Sticky Header & Navigation -->
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-red-600 text-white p-2.5 rounded-lg font-black text-xl tracking-wider">TAR</div>
                 <div>
-                    <h1 class="font-black text-xl text-slate-900 tracking-tight leading-none">TOKAI AUTO REPAIRS</h1>
-                    <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">SAMBRA Approved Major Repairer</span>
+                    <span class="font-extrabold text-xl block text-gray-900 tracking-tight">TOKAI AUTO REPAIRS</span>
+                    <span class="text-xs uppercase tracking-widest text-red-600 font-bold block -mt-1">SAMBRA Approved Major Repairer</span>
                 </div>
             </div>
-            <nav class="hidden md:flex gap-6 font-semibold text-gray-600">
-                <a href="#about" class="hover:text-slate-900 transition">About Us</a>
-                <a href="#proof" class="hover:text-slate-900 transition">Before & After</a>
-                <a href="#insurance" class="hover:text-slate-900 transition">Insurance Claims</a>
-                <a href="#book" class="bg-slate-900 text-white px-4 py-2 rounded-md hover:bg-slate-800 transition">Book Repair</a>
+            <nav class="hidden md:flex space-x-8 font-semibold text-gray-600">
+                <a href="#about" class="hover:text-red-600 transition">About Us</a>
+                <a href="#services" class="hover:text-red-600 transition">Services</a>
+                <a href="#gallery" class="hover:text-red-600 transition">Before & After</a>
+                <a href="#insurance" class="hover:text-red-600 transition">Insurance Claims</a>
+                <a href="#appointment" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition -mt-1">Book Repair</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-16 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <span class="bg-amber-500/20 text-amber-400 font-bold px-3 py-1 rounded-full text-sm uppercase tracking-wider border border-amber-500/30">SAMBRA Structural Motor Body Repairer</span>
-            <h2 class="text-4xl md:text-5xl font-black mt-6 mb-4 tracking-tight">Cape Town's Trusted Auto Body & Panel Beating Specialists</h2>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">Precision structural alignment, factory-quality spray painting, and stress-free insurance handling across 80+ vehicle brands.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#book" class="bg-amber-500 text-slate-950 font-bold px-6 py-3 rounded-lg hover:bg-amber-400 transition shadow-lg">Book Online Assessment</a>
-                <a href="tel:+27217131050" class="border-2 border-white/80 font-bold px-6 py-3 rounded-lg hover:bg-white/10 transition">Call 021 713 1050</a>
+    <section class="bg-slate-900 text-white py-20 px-4 text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85));">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-flex items-center space-x-2 bg-red-600/20 text-red-400 border border-red-500/30 px-3 py-1 rounded-full text-sm font-semibold mb-6">
+                <i class="fas fa-certificate"></i> <span>SAMBRA Structural Motor Body Repairer</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">Cape Town's Trusted Auto Body & Panel Beating Specialists</h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Precision structural alignment, factory-quality spray painting, and stress-free insurance handling across 80+ vehicle brands.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#appointment" class="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-lg shadow-lg transition text-lg">
+                    <i class="fas fa-calendar-check mr-2"></i> Book Online Assessment
+                </a>
+                <a href="tel:+27217131050" class="bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold px-8 py-4 rounded-lg transition text-lg">
+                    <i class="fas fa-phone mr-2"></i> Call 021 713 1050
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Trust Features Grid -->
-    <section id="about" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-award"></i></div>
-            <h3 class="font-bold text-lg mb-2 text-slate-900">SAMBRA Accredited</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Strictly audited to meet national standards as a Major Structural Repairer, guaranteeing quality workmanship and peace of mind.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-user-tie"></i></div>
-            <h3 class="font-bold text-lg mb-2 text-slate-900">Personal Management</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Led by Dean & Team, praised across Cape Town for seamless insurance liaison and keeping you updated step-by-step through your repair lifecycle.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-car-burst"></i></div>
-            <h3 class="font-bold text-lg mb-2 text-slate-900">80+ Brands Supported</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">From passenger cars to heavy commercial fleets. Equipped with advanced chassis straighteners and factory-grade spray booths.</p>
+    <!-- Trust Signals Section -->
+    <section id="about" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <!-- SAMBRA Badge Card -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+                <div class="text-red-600 text-5xl mb-4"><i class="fas fa-shield-halved"></i></div>
+                <h3 class="font-bold text-xl mb-2 text-gray-900">SAMBRA Accredited</h3>
+                <p class="text-gray-600 text-sm">Strictly audited to meet national standards as a Major Structural Repairer, guaranteeing quality workmanship and peace of mind.</p>
+            </div>
+            <!-- Dean's Profile -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                <div class="w-24 h-24 bg-gray-200 rounded-full mb-4 flex items-center justify-center text-gray-400 border-4 border-red-500/20">
+                    <i class="fas fa-user-tie text-4xl text-gray-500"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-1 text-gray-900">Personal Management</h3>
+                <p class="text-red-600 text-xs font-bold uppercase tracking-wider mb-2">Led by Dean & Team</p>
+                <p class="text-gray-600 text-sm">Praised across Cape Town for seamless insurance liaison and keeping you updated step-by-step through your repair lifecycle.</p>
+            </div>
+            <!-- General Info -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+                <div class="text-red-600 text-5xl mb-4"><i class="fas fa-car-burst"></i></div>
+                <h3 class="font-bold text-xl mb-2 text-gray-900">80+ Brands Supported</h3>
+                <p class="text-gray-600 text-sm">From passenger cars to heavy commercial fleets. Equipped with advanced chassis straighteners and factory-grade spray booths.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Visual Proof Segment (Before/After Toggle Fix) -->
-    <section id="proof" class="bg-slate-100 py-12 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-black text-slate-900 tracking-tight mb-2">Showroom Finish Proof</h2>
-            <p class="text-gray-600 mb-8">Toggle below to see real results from our workshop repairs</p>
+    <!-- Interactive Visual Proof (Before & After Slider Simulation) -->
+    <section id="gallery" class="py-16 bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-gray-900 tracking-tight">Showroom Finish Proof</h2>
+                <p class="text-gray-600 mt-2">Toggle below to see real results from our workshop repairs</p>
+            </div>
+            
+            <div class="bg-white p-4 rounded-xl shadow-md">
+                <div class="slider-container">
+                    <!-- Before Image Container -->
+                    <div id="beforeImg" class="slider-img block">
+                        <div class="w-full h-full bg-zinc-700 flex items-center justify-center text-white">
+                            <div class="text-center px-4">
+                                <i class="fas fa-car-burst text-6xl text-red-500 mb-3"></i>
+                                <p class="font-bold text-lg">Severe Rear-End Structural Damage & Creased Panels</p>
+                            </div>
+                        </div>
+                        <span class="before-label">BEFORE REPAIR</span>
+                    </div>
+                    <!-- After Image Container -->
+                    <div id="afterImg" class="slider-img hidden">
+                        <div class="w-full h-full bg-slate-800 flex items-center justify-center text-white">
+                            <div class="text-center px-4">
+                                <i class="fas fa-wand-magic-sparkles text-6xl text-green-500 mb-3"></i>
+                                <p class="font-bold text-lg">Fully Aligned Structural Chassis & Flawless Factory Paint Match</p>
+                            </div>
+                        </div>
+                        <span class="after-label">AFTER REPAIR</span>
+                    </div>
+                </div>
+                
+                <!-- Toggle Slider Controls -->
+                <div class="flex justify-center space-x-4 mt-6">
+                    <button onclick="showBefore()" id="btnBefore" class="px-6 py-2 bg-red-600 text-white font-bold rounded-lg shadow transition">View Before</button>
+                    <button onclick="showAfter()" id="btnAfter" class="px-6 py-2 bg-gray-200 text-gray-700 font-bold rounded-lg shadow transition hover:bg-gray-300">View After</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Image Shell Container -->
-            <div class="relative w-full max-w-2xl mx-auto h-80 md:h-[450px] bg-slate-200 rounded-xl overflow-hidden shadow-xl border-4 border-white">
-                <!-- Before Image -->
-                <div id="before-box" class="absolute inset-0 transition-opacity duration-500 image-toggle-active">
-                    <img src="https://unsplash.com" alt="Damaged Car" class="w-full h-full object-cover">
-                    <div class="absolute bottom-4 left-4 bg-red-600 text-white font-black text-xs px-3 py-1.5 rounded tracking-widest uppercase shadow">Severe Rear-End Structural Damage & Creased Panels</div>
+    <!-- Streamlined Insurance Section -->
+    <section id="insurance" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+                <h2 class="text-3xl font-black text-gray-900 tracking-tight mb-4">Streamline Your Insurance Claim</h2>
+                <p class="text-gray-600 mb-6">We are recognized by major South African insurance brokers. Let Dean and our administrative desk handle the stressful paperwork approvals directly with your insurer.</p>
+                
+                <!-- Insurance Cheat Sheet -->
+                <div class="bg-red-50/80 border-l-4 border-red-600 p-6 rounded-r-xl">
+                    <h4 class="font-extrabold text-red-900 text-lg mb-3"><i class="fas fa-list-check mr-2"></i> Claims Checklist Cheat Sheet</h4>
+                    <ul class="space-y-3 text-sm text-gray-700 font-medium">
+                        <li><i class="fas fa-check text-red-600 mr-2"></i> Take clear photos of all vehicle impact angles at the scene.</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i> Report the accident to SAPS within 24 hours to obtain an AR Number.</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i> Note down third-party details (Name, ID, Contact, Car Registration).</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i> Specify <strong>Tokai Auto Repairs (Retreat)</strong> as your preferred repair workshop.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Interactive Assessment Tool Concept -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-xl text-gray-900 mb-4"><i class="fas fa-calculator text-red-600 mr-2"></i> Damage Category Indicator</h3>
+                <p class="text-sm text-gray-600 mb-4">Select the impacted area below to instantly understand the typical restoration path required:</p>
+                
+                <div class="mb-4">
+                    <label class="block text-xs uppercase font-bold tracking-wider text-gray-500 mb-2">Select Impact Area</label>
+                    <select id="damageDropdown" onchange="updateDamageAssessment()" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 font-semibold">
+                        <option value="bumper">Minor Bumper Scratch / Dent</option>
+                        <option value="fender">Creased Fender or Side Panel</option>
+                        <option value="chassis">Major Collision / Structural Impact</option>
+                    </select>
+                </div>
+                
+                <div id="assessmentOutput" class="p-4 bg-zinc-50 border border-zinc-100 rounded-lg text-sm font-medium text-gray-700">
+                    <i class="fas fa-info-circle text-blue-500 mr-1"></i> Typically qualifies for non-structural restoration, swift dent extraction, and local spray painting spot-matching. Can be processed fast.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Friendly Appointment Form Linked to Email -->
+    <section id="appointment" class="py-16 bg-slate-900 text-white">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black tracking-tight">Book Assessment Appointment</h2>
+                <p class="text-slate-400 mt-2">Fill in your information below. All submission data processes securely to our service desk inbox.</p>
+            </div>
+            
+            <!-- Standard Formspree Integration for Email & File Uploads -->
+            <form action="https://formspree.io/f/mppwwvej" method="POST" enctype="multipart/form-data" class="bg-white text-gray-800 p-8 rounded-2xl shadow-xl space-y-6">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase font-bold tracking-wider text-gray-600 mb-2">Full Name *</label>
+                        <input type="text" name="name" required placeholder="e.g., Jan Marais" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold tracking-wider text-gray-600 mb-2">Contact Number *</label>
+                        <input type="tel" name="phone" required placeholder="e.g., 082 123 4567" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 font-medium">
+                    </div>
                 </div>
 
-                <!-- After Image -->
-                <div id="after-box" class="absolute inset-0 transition-opacity duration-500 image-toggle-hidden">
-                    <img src="https://unsplash.com" alt="Repaired Car" class="w-full h-full object-cover">
-                    <div class="absolute bottom-4 left-4 bg-emerald-600 text-white font-black text-xs px-3 py-1.5 rounded tracking-widest uppercase shadow">Fully Aligned Structural Chassis & Flawless Factory Paint Match</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase font-bold tracking-wider text-gray-600 mb-2">Email Address *</label>
+                        <input type="email" name="_replyto" required placeholder="name@domain.co.za" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold tracking-wider text-gray-600 mb-2">Vehicle Make & Model *</label>
+                        <input type="text" name="vehicle" required placeholder="e.g., VW Golf 7 / Toyota Hilux" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 font-medium">
+                    </div>
                 </div>
-            </div>
 
-            <!-- Operational Control System Interface Buttons -->
-            <div class="flex justify-center gap-4 mt-6">
-                <button id="show-before-btn" class="bg-red-600 text-white font-bold px-5 py-2 rounded-lg shadow hover:bg-red-700 transition transform active:scale-95 focus:outline-none">View Before</button>
-                <button id="show-after-btn" class="bg-slate-800 text-white font-bold px-5 py-2 rounded-lg shadow hover:bg-slate-900 transition transform active:scale-95 focus:outline-none opacity-60">View After</button>
-            </div>
+                <div>
+                    <label class="block text-xs uppercase font-bold tracking-wider text-gray-600 mb-2">Insurance Company (If Applicable)</label>
+                    <input type="text" name="insurance" placeholder="e.g., Discovery / Santam / Outsurance" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 font-medium">
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase font-bold tracking-wider text-gray-600 mb-2">Describe Damage / Scope Needed</label>
+                    <textarea name="message" rows="4" placeholder="Provide details about the damage..." class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 font-medium"></textarea>
+                </div>
+
+                <!-- Configured Redirect Success Page Destination -->
+                <input type="hidden" name="_next" value="success.html">
+
+                <!-- Crucial File Attachment Configuration -->
+                <div class="border-2 border-dashed border-gray-200 p-6 rounded-xl text-center bg-gray-50">
+                    <label class="cursor-pointer block">
+                        <i class="fas fa-camera text-3xl text-gray-400 mb-2 block"></i>
+                        <span class="text-sm font-bold text-gray-700 block">Attach Accident Scene or Damage Photos</span>
+                        <span class="text-xs text-gray-400 block mt-1">Supports JPG, PNG up to 10MB</span>
+                        <input type="file" name="accident_photos" accept="image/*" multiple class="hidden">
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold p-4 rounded-xl transition text-lg tracking-wide shadow-md">
+                    Submit Secure Request <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+            </form>
         </div>
     </section>
 
-    <!-- Insurance Logic & Interactive Selector Matrix -->
-    <section id="insurance" class="max-w-5xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-start">
-        <div>
-            <h2 class="text-3xl font-black text-slate-900 tracking-tight mb-4">Streamline Your Insurance Claim</h2>
-            <p class="text-gray-600 mb-6 leading-relaxed">We are recognized by major South African insurance brokers. Let Dean and our administrative desk handle the stressful paperwork approvals directly with your insurer.</p>
-            
-            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
-                <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2 text-sm uppercase tracking-wider text-amber-600"><i class="fa-solid fa-list-check"></i> Claims Checklist Cheat Sheet</h4>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Take clear photos of all vehicle impact angles at the scene.</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Report the accident to SAPS within 24 hours to obtain an AR Number.</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Note down third-party details (Name, ID, Contact, Car Registration).</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Specify <strong>Tokai Auto Repairs (Retreat)</strong> as your preferred repair workshop.</li>
-                </ul>
+    <!-- Footer / Contact Info -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="font-bold text-white text-base mb-3">Workshop Workshop Location</h4>
+                <p>Unit 10, 11 & 12, Concert Park</p>
+                <p>Joe Marks Blvd, Retreat</p>
+                <p>Cape Town, 7965, South Africa</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-base mb-3">Direct Contact Desk</h4>
+                <p>Phone: <a href="tel:+27217131050" class="hover:text-white text-red-400 transition font-semibold">021 713 1050</a></p>
+                <p>Email: <a href="mailto:tokaiautorepairs@eject.co.za" class="hover:text-white transition">tokaiautorepairs@eject.co.za</a></p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-base mb-3">Accreditation Verified</h4>
+                <p>SAMBRA Major Structural Repairer (MSR)</p>
+                <p class="mt-2 text-xs text-slate-500">&copy; 2026 Tokai Auto Repairs. Independent Community Representation.</p>
             </div>
         </div>
+    </footer>
 
-        <div class="bg-slate-900 text-white p-6 rounded-xl shadow-lg">
-            <h3 class="font-black text-xl mb-1">Damage Category Indicator</h3>
-            <p class="text-xs text-slate-400 mb-4">Select the impacted area below to instantly understand the typical restoration path required:</p>
+    <!-- Sticky Floating WhatsApp Chat Button -->
+    <a href="https://wa.me/27217131050?text=Hello%20Tokai%20Auto%20Repairs,%20I'd%20like%20to%20request%20an%20accident%20repair%20assessment." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-110 z-50 text-2xl"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Dynamic Interactive Script Behaviours -->
+    <script>
+        function showBefore() {
+            document.getElementById('beforeImg').classList.remove('hidden');
+            document.getElementById('afterImg').classList.add('hidden');
+            document.getElementById('btnBefore').className = "px-6 py-2 bg-red-600 text-white font-bold rounded-lg shadow transition";
+            document.getElementById('btnAfter').className = "px-6 py-2 bg-gray-200 text-gray-700 font-bold rounded-lg shadow transition hover:bg-gray-300";
+        }
+        function showAfter() {
+            document.getElementById('beforeImg').classList.add('hidden');
+            document.getElementById('afterImg').classList.remove('hidden');
+            document.getElementById('btnBefore').className = "px-6 py-2 bg-gray-200 text-gray-700 font-bold rounded-lg shadow transition hover:bg-gray-300";
+            document.getElementById('btnAfter').className = "px-6 py-2 bg-red-600 text-white font-bold rounded-lg shadow transition";
+        }
+        function updateDamageAssessment() {
+            const dropdown = document.getElementById('damageDropdown');
+            const output = document.getElementById('assessmentOutput');
             
+            if (dropdown.value === 'bumper') {
+                output.innerHTML = '<i class="fas fa-info-circle text-blue-500 mr-1"></i> Typically qualifies for non-structural restoration, swift dent extraction, and local spray painting spot-matching. Can be processed fast.';
+            } else if (dropdown.value === 'fender') {
+                output.innerHTML = '<i class="fas fa-circle-exclamation text-amber-500 mr-1"></i> Requires specialized panel pulling tools or panel replacement. Factory paint color matching booth needed to prevent shading panels.';
+            } else if (dropdown.value === 'chassis') {
+                output.innerHTML = '<i class="fas fa-triangle-exclamation text-red-500 mr-1"></i> Requires advanced electronic chassis straightening bench measurement. Crucial for SAMBRA structural compliance safety testing.';
+            }
+        }
+    </script>
+</body>
+</html>
